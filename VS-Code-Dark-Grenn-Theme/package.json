@@ -1,0 +1,21 @@
+{
+  "name": "first-light",
+  "displayName": "first light",
+  "description": "dark green theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "test colors",
+        "uiTheme": "vs-dark",
+        "path": "./themes/first light-color-theme.json"
+      }
+    ]
+  }
+}
