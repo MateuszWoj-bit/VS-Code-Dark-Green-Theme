@@ -1,4 +1,4 @@
-# VS Code Dark Grenn Theme
+# VS Code Dark Green Theme
  
 VS Code Label FirstLight 
 README
