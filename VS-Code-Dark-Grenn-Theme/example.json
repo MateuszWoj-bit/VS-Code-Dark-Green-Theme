@@ -1,0 +1,17 @@
+{
+  "name": "test colors",
+  "colors": {
+    "editor.background": "New Value",
+    "editor.foreground": 42,
+    "editor.selectionBackground": "#00FF00",
+    "activityBar.background": "#000000",
+    "sideBar.background": "#000000",
+    "sideBar.foreground": "#00FF00",
+    "titleBar.activeBackground": "#000000",
+    "titleBar.inactiveBackground": "#000000",
+    "statusBar.background": "#000000",
+    "statusBar.foreground": "#00FF00",
+    "statusBar.noFolderBackground": "#000000",
+    "statusBar.debuggingBackground": "#000000"
+  }
+}
