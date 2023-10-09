@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Changer Menu</title>
+  </head>
+  <body>
+    <input type="file" id="fileInput" accept=".json" />
+    <button id="changeColorButton">Change Color</button>
+    <pre id="fileContents"></pre>
+
+    <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+
+          if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+              const fileContents = e.target.result;
+              document.getElementById("fileContents").textContent =
+                fileContents;
+
+              try {
+                const jsonData = JSON.parse(fileContents);
+
+                jsonData.colors["editor.background"] = "New Background Value";
+                jsonData.colors["editor.foreground"] = 999;
+
+                const commentSetting = jsonData.tokenColors.find(
+                  (option) => option.name === "Comment"
+                );
+                if (commentSetting) {
+                  commentSetting.settings.foreground = "#FF0000";
+                }
+
+                const updatedJsonData = JSON.stringify(jsonData, null, 2);
+
+                document.getElementById("fileContents").textContent =
+                  updatedJsonData;
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
+              }
+            };
+
+            reader.readAsText(file);
+          }
+        });
+
+      document
+        .getElementById("changeColorButton")
+        .addEventListener("click", function () {
+          // Function for button
+        });
+    </script>
+  </body>
+</html>
